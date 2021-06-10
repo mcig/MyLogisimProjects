@@ -1,0 +1,14 @@
+1- Shift Register Circuit:
+First we select a 8-bit input string with the multiplexer, then the input is fed into the shift register with the controller bit.
+It is then forwarded into the other shift register.
+We read inputs from the shift register as first 8-bit set and second 8-bit sets.
+Each set is concatenated with 8 zeros and fed into an 16x16 bit multiplier.
+The final 16 bit output is written on the outputs.
+
+2- Ripple Counter:
+As my number evaluates into - > 19070001001 mod 16 = 4 => 4 + 11 = 15
+This counter should count from 0 to 15.
+To achieve this i reset the counter when the 5th bit turns into one.
+01111 becomes the final output and then the output is frozen.
+(I couldn't achieve the resetting without asyncs so the output doesn't return to 0 after 15)
+(It frozes when it hits 15)
